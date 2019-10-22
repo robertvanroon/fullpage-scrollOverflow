@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>Fullpage scrollOverflow on iOS</title>
+  <meta name="Resource-type" content="Document" />
+  <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css" />
+
+  <!--[if IE]>
+      <script type="text/javascript">
+        var console = { log: function() {} };
+      </script>
+    <![endif]-->
+
+  <style>
+    h1 {
+      display: flex;
+      color: wheat;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 3em;
+      align-items: center;
+    }
+
+    .percent {
+      height: 100%;
+    }
+
+    .vh {
+      height: 100vh;
+    }
+
+    .testFullpage-0 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .testFullpage-1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .testFullpage-hero-0 {
+      display: flex;
+      width: 100vw;
+      background: #444;
+      justify-content: center;
+    }
+
+    .testFullpage-hero-0 {
+      display: flex;
+      width: 100vw;
+
+      background: #444;
+      justify-content: center;
+    }
+
+    .testFullpage-hero-1 {
+      display: flex;
+      width: 100vw;
+      background: #333;
+      justify-content: center;
+    }
+
+    .testFullpage-hero-2 {
+      display: flex;
+      width: 100vw;
+      background: #444;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="testFullpage">
+    <!-- Page 0 -->
+    <div class="section " id="section0">
+      <section class="testFullpage-0 slide">
+        <div class="testFullpage-hero-0 vh">
+          <h1>section 1<br> height: 100vh</h1>
+        </div>
+      </section>
+      <section class="testFullpage-0 slide">
+        <div class="testFullpage-hero-1 percent">
+          <h1>section 1 - slide 1<br> height: 100%</h1>
+        </div>
+      </section>
+      <section class="testFullpage-0 slide">
+        <div class="testFullpage-hero-2 vh">
+          <h1>section 1 - slide 2<br> height: 100vh</h1>
+        </div>
+      </section>
+    </div>
+    <div class="section " id="section1">
+      <section class="testFullpage-1 slide">
+        <div class="testFullpage-hero-0 vh">
+          <h1>section 2 <br> height: 100vh</h1>
+        </div>
+      </section>
+      <section class="testFullpage-0 slide">
+        <div class="testFullpage-hero-1 percent">
+          <h1>section 2 - slide 1<br> height: 100%</h1>
+        </div>
+      </section>
+      <section class="testFullpage-0 slide">
+        <div class="testFullpage-hero-2 vh">
+          <h1>section 2 - slide 2<br> height: 100vh</h1>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/vendors/scrolloverflow.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js"></script>
+
+  <script type="text/javascript">
+
+    let testFullpage = new fullpage('#testFullpage', {
+      anchors: [
+        "firstPage",
+        "secondPage",
+      ],
+      verticalCentered: false,
+      scrollBar: false,
+      scrollOverflow: true,
+    });
+
+  </script>
+
+</body>
+
+</html>
